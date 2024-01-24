@@ -1,0 +1,102 @@
+.container {
+    margin: 0;
+}
+.logo {
+    background-color: rgb(6, 6, 108);
+    height: 100vh;
+}
+
+.wrapper {
+    width: 60%;
+    margin: 3em auto;
+    text-align: center;
+}
+
+.circle-1, .circle-2 {
+    border: 5px solid rgba(170, 22, 81, 0.5);
+    box-shadow: 0.5px 0.5px 2px rgba(165, 123, 140, 0.9);
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    margin: 3em auto;
+}
+
+.circle-2 {
+    width: 400px;
+    height: 400px;
+    position: relative;
+}
+
+.circle-2 > .container {
+    /* position: absolute; */
+    width: 20em;
+    padding: 10px;
+    margin: 40% auto;
+    border: 6px solid palevioletred;
+    background-color: #f2f2fA;
+    color: darkblue;
+}
+
+.account {
+    margin: 9em auto;
+    text-align: center;
+    padding: 10px;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.btn {
+    width: 100%;
+}
+
+
+/*  */
+
+#img_div {
+    margin: 1em auto;
+    width: 300px;
+    height: 200px;
+    background-color: rgba(220, 213, 215, 0.9);
+    cursor: pointer;
+}
+
+.modal {
+    width: 75%;
+}
+
+.crop-preview {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 50%;
+    height: 60%;
+    border: 1px solid rgb(167, 167, 167);
+    background-color: rgb(176, 177, 178);
+    display: none;
+}
+
+/* dashboard-admin */
+.uid {
+    position: relative;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.pill {
+    width: fit-content;
+    padding: 2px 8px;
+    color: white;
+    position: absolute;
+    top: -1em;
+    right: 0;
+}
+
+.uid p{
+    text-align: left;
+    margin: 10px auto;
+}

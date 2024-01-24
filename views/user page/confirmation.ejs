@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/account.css" />
+    <link rel="stylesheet" href="/styles/confirmation.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />    
+    <title>User Dashboard</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.11/cropper.css"> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.11/cropper.js" defer></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="blur"></div>
+    <main class="d-flex flex-row">
+        <% if (message) { %>
+            <section class="container main-container">
+                <div class="wrapper">
+                    <h2>Create User Details</h2>
+                    <form method="POST" action=<%=`/user/${result.u_id}/dashboard`%> enctype="multipart/form-data">
+                        <input class="form-control mb-3" type="text" name="userName" value=<%= result.userName %> placeholder="User Name" />
+                        <input type="file" id="file_image" name="uploadFile" value="<%=result.avatar.path%>" class="form-control"/>
+                        <div class="form-control mb-3" id="img_div">
+                            <img src="<%= result.avatar.path %>" alt="user avatar" alt="profile_pic" id="cropImg" width='100%' height="100%" />
+                        </div>
+                        <button class="btn btn-primary" id="submitBtn">Submit</button>
+                    </form>
+                </div>
+            </section>
+        
+            <section class="sidebar">
+                <p id="close" class="<%= result.u_id %>">X</p>
+                <h3 class="mb-3"><%= result.userName %></h3>
+                <img src="<%= result.avatar.path %>" alt="user avatar" width="40%" />
+                <% if(admin) { %>
+                    <p class="bg-success-subtle text-success msg"><%= message %></p>
+                <% } else { %>
+                    <p class="bg-warning-subtle text-warning msg"><%= message %></p>
+                <% } %>
+                </section>    
+        <% } else { %>
+            <%= null %>
+        <% } %>
+    </main>
+    
+    <script src="/js/userConfirmation.js"></script>
+</body>
+</html>
